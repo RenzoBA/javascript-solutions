@@ -1,11 +1,13 @@
 // Factorial: calcula el factorial de un número
 
 function miFactorial(numero) {
-    let factorial = 1;
-    for(i = numero; i > 0; i--) {
-    factorial =  i*factorial;
+    const bigNum = BigInt(numero);
+    let factorial = 1n;
+    for(i = bigNum; i > 0; i--) {
+        factorial =  i*factorial;
     }
-    return factorial;
+    return factorial.toString();
 }
 
-miFactorial(5); //120
+console.log(miFactorial(5)); //120
+console.log(miFactorial(30)); //265252859812191058636308480000000
